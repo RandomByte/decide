@@ -6,13 +6,19 @@ var handlers = {
 	},
 
 	DecisionIntent: function() {
-		this.emit(":tell", getRandomInt(0, 1) === 0 ? this.t("YES") : this.t("NO"));
+		this.emit(":tell", decide(this, getRandomInt(0, 1) === 0 ? this.t("YES") : this.t("NO")));
 	},
 
 	Unhandled: function() {
 		this.emit(":ask", this.t("UNHANDLED"), this.t("WELCOME"));
 	}
 };
+
+function decide(context, answer) {
+	var answeres = context.t("ANSWERES");
+	var idx = getRandomInt(0, answeres.length - 1);
+	return context.t("ANSWERES." + idx, answer);
+}
 
 function getRandomInt(min, max) {
 	var low = Math.ceil(min);
@@ -27,7 +33,11 @@ var languageStrings = {
 			WELCOME: "This is Decider. Try asking for yes or no.",
 			UNHANDLED: "Sorry, I didn't get that. Try yes or no.",
 			YES: "Yes",
-			NO: "No"
+			NO: "No",
+			ANSWERES: [
+				"Obviously %s",
+				"Clearly %s"
+			]
 		}
 	},
 	"de-DE": {
@@ -36,7 +46,15 @@ var languageStrings = {
 			WELCOME: "Das ist der Entscheider. Frage mich nach ja oder nein.",
 			UNHANDLED: "Das habe ich leider nicht verstanden. Versuche es mit ja oder nein.",
 			YES: "Ja",
-			NO: "Nein"
+			NO: "Nein",
+			ANSWERES: [
+				"Natürlich %s",
+				"Das kann nur %s sein",
+				"Die Antwort lautet %s",
+				"Ein ganz klares %s",
+				"Leider ist die Antwort %s",
+				"Zum Glück ist die Antwort %s"
+			]
 		}
 	}
 };

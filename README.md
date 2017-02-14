@@ -5,7 +5,7 @@
 {
   "intents": [
     {
-      "intent": "Decide"
+      "intent": "DecisionIntent"
     }
   ]
 }
@@ -13,8 +13,12 @@
 
 ## Sample Utterances
 ````
-Decide entscheide
-Decide treffe eine entscheidung
-Decide ja oder nein
-Decide einer entscheidung
+DecisionIntent ja oder nein
+DecisionIntent nein oder ja
+DecisionIntent nach ja oder nein
+DecisionIntent einer entscheidung
+DecisionIntent einer zufälligen entscheidung
+DecisionIntent entscheide
+DecisionIntent treffe eine entscheidung
+DecisionIntent zufall
 ````
