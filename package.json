@@ -1,0 +1,26 @@
+{
+  "name": "decider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandomByte/decider.git"
+  },
+  "author": "Merlin Beutlberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RandomByte/decider/issues"
+  },
+  "homepage": "https://github.com/RandomByte/decider#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.0",
+    "eslint-config-google": "^0.6.0"
+  }
+}
